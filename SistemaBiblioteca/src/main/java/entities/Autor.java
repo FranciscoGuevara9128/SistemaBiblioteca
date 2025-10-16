@@ -14,10 +14,12 @@ import java.util.List;
 @Entity
 @Table(name = "autor")
 @ToString(exclude = "libros")
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Autor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
     private Long id;
 
     @Column(nullable = false, length = 120)

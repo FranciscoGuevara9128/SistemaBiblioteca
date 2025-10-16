@@ -13,12 +13,14 @@ import java.util.Set;
 @Entity
 @Table(name = "categoria")
 @ToString(exclude = "libros")
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Categoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @EqualsAndHashCode.Include
     @Column(nullable = false, unique = true, length = 80)
     private String nombre;
 
